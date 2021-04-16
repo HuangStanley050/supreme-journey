@@ -8,6 +8,7 @@ import {
   LOAD_MOVIES_START,
 } from "./context/Types";
 import { useMovie } from "./context/MovieStore";
+import AppBar from "./components/AppBar";
 import axios from "axios";
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
+        <AppBar />
         <Typography
           component="div"
           style={{
