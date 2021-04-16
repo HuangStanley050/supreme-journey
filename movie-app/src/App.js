@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
@@ -15,6 +15,11 @@ import axios from "axios";
 
 export default function App() {
   const [state, dispatch] = useMovie();
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const moviesPerPage = 4;
+  const pagesVisited = pageNumber * moviesPerPage;
+
   const fetchMovieData = async () => {
     dispatch({ type: LOAD_MOVIES_START });
     try {
@@ -24,16 +29,18 @@ export default function App() {
       dispatch({ type: LOAD_MOVIES_FAIL });
     }
   };
+
   useEffect(() => {
     fetchMovieData();
   }, []);
+
   return (
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
         <AppBar />
-        <MovieInfo />
-        <Paginate />
+        <MovieInfo pagesVisited={pagesVisited} moviesPerPage={moviesPerPage} />
+        <Paginate moviesPerPage={moviesPerPage} setPageNumber={setPageNumber} />
       </Container>
     </React.Fragment>
   );
