@@ -1,0 +1,3 @@
+export const LOAD_MOVIES_START = "LOAD_MOVIES_START";
+export const LOAD_MOVIES_OK = "LOAD_MOVIES_OK";
+export const LOAD_MOVIES_FAIL = "LOAD_MOVIES_FAIL";
