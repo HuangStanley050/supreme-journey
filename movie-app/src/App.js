@@ -9,6 +9,8 @@ import {
 } from "./context/Types";
 import { useMovie } from "./context/MovieStore";
 import AppBar from "./components/AppBar";
+import MovieInfo from "./components/MovieInfo";
+import Paginate from "./components/Paginate";
 import axios from "axios";
 
 export default function App() {
@@ -30,13 +32,8 @@ export default function App() {
       <CssBaseline />
       <Container maxWidth="lg">
         <AppBar />
-        <Typography
-          component="div"
-          style={{
-            backgroundColor: "#cfe8fc",
-            height: "100vh",
-          }}
-        />
+        <MovieInfo />
+        <Paginate />
       </Container>
     </React.Fragment>
   );
