@@ -4,7 +4,9 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-import InfoButton from "./SessionButton";
+import Button from "@material-ui/core/Button";
+import InfoButton from "./InfoButton";
+import Rating from "./Rating";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MovieCard = ({ title, summary, image, movieId }) => {
+const MovieCard = ({ title, summary, image, movieId, rating }) => {
   const classes = useStyles();
 
   return (
@@ -57,6 +59,7 @@ const MovieCard = ({ title, summary, image, movieId }) => {
         </CardContent>
       </div>
       <InfoButton movieId={movieId} />
+      <Rating rating={rating} />
     </Card>
   );
 };

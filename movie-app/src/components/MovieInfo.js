@@ -18,6 +18,7 @@ const MovieInfo = ({ pagesVisited, moviesPerPage }) => {
           summary={movie.synopsis}
           image={image}
           movieId={movie.movieId}
+          rating={movie.rating}
         />
       );
     });
