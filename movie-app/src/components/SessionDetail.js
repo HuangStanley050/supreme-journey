@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Redirect } from "react-router-dom";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -22,6 +23,10 @@ const SessionDetail = () => {
   const [state] = useMovie();
   const { movies } = state;
   const movieDetail = movies.find((movie) => movie.movieId === movieId);
+  if (!movieDetail) {
+    return <Redirect to="/" />;
+  }
+
   const { sessions = [], title } = movieDetail;
   return (
     <TableContainer component={Paper}>
