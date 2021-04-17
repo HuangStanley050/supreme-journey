@@ -27,7 +27,7 @@ const SessionDetail = () => {
     return <Redirect to="/" />;
   }
 
-  const { sessions = [], title } = movieDetail;
+  const { sessions, title } = movieDetail;
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="session table">
