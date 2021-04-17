@@ -15,11 +15,11 @@ const Paginate = ({ moviesPerPage, setPageNumber }) => {
       nextLabel={"Next"}
       pageCount={pageCount}
       onPageChange={changePage}
-      containerClassName={"paginationBttns"}
-      previousLinkClassName={"previousBttn"}
-      nextLinkClassName={"nextBttn"}
-      disabledClassName={"paginationDisabled"}
-      activeClassName={"paginationActive"}
+      containerClassName={"pagination"}
+      previousLinkClassName={"pagination__link"}
+      nextLinkClassName={"pagination__link"}
+      disabledClassName={"pagination__link--disabled"}
+      activeClassName={"pagination__link--active"}
     />
   );
 };
