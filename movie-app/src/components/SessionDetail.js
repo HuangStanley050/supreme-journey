@@ -41,7 +41,7 @@ const SessionDetail = () => {
         </TableHead>
         <TableBody>
           {sessions.map((session) => (
-            <TableRow key={session.id}>
+            <TableRow hover={true} key={session.id}>
               <TableCell align="right"></TableCell>
               <TableCell align="right">{session.sessionId}</TableCell>
               <TableCell align="right">{session.sessionTime}</TableCell>
