@@ -5,6 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import InfoButton from "./InfoButton";
 import Rating from "./Rating";
 
@@ -45,6 +46,8 @@ const useStyles = makeStyles((theme) => ({
 const MovieCard = ({ title, summary, image, movieId, rating }) => {
   const classes = useStyles();
 
+  const matches = useMediaQuery("(min-width:700px)");
+
   return (
     <Card className={classes.root}>
       <Avatar alt="movie picture" src={image} className={classes.bigAvatar} />
@@ -53,9 +56,11 @@ const MovieCard = ({ title, summary, image, movieId, rating }) => {
           <Typography variant="h5" className={classes.title}>
             {title}
           </Typography>
-          <Typography variant="subtitle1" className={classes.summary}>
-            {summary}
-          </Typography>
+          {!matches ? null : (
+            <Typography component="p" className={classes.summary}>
+              {summary}
+            </Typography>
+          )}
         </CardContent>
       </div>
       <InfoButton movieId={movieId} />

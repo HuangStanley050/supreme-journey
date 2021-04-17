@@ -37,7 +37,7 @@ export default function ButtonAppBar() {
             <HomeIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Movies Sessions
+            Movies
           </Typography>
         </Toolbar>
       </AppBar>
