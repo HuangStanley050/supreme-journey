@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     marginTop: "1rem",
     marginBottom: "1rem",
+    backgroundColor: "dodgerBlue",
   },
   avatar: {
     margin: 10,
@@ -34,6 +35,12 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     objectFit: "contain",
   },
+  summary: {
+    color: "white",
+  },
+  title: {
+    color: "yellow",
+  },
 }));
 
 const MovieCard = ({ title, summary, image }) => {
@@ -44,10 +51,10 @@ const MovieCard = ({ title, summary, image }) => {
       <Avatar alt="movie picture" src={image} className={classes.bigAvatar} />
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h5" variant="h5">
+          <Typography component="h5" className={classes.title}>
             {title}
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary">
+          <Typography variant="subtitle1" className={classes.summary}>
             {summary}
           </Typography>
         </CardContent>
