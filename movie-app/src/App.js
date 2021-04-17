@@ -52,9 +52,7 @@ export default function App() {
               setPageNumber={setPageNumber}
             />
           </Route>
-          <Route path="/test">
-            <h1>Test</h1>
-          </Route>
+
           <Route path="/:movieId" children={<SessionDetail />} />
         </Switch>
       </Container>
