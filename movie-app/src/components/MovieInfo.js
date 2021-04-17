@@ -12,14 +12,12 @@ const MovieInfo = ({ pagesVisited, moviesPerPage }) => {
       const { media, movieId } = movie;
       const image = media[0].url;
       return (
-        <div>
-          <MovieCard
-            key={movieId}
-            title={movie.title}
-            summary={movie.synopsis}
-            image={image}
-          />
-        </div>
+        <MovieCard
+          key={movieId}
+          title={movie.title}
+          summary={movie.synopsis}
+          image={image}
+        />
       );
     });
   return <div>{showMovies}</div>;

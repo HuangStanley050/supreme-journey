@@ -1,9 +1,10 @@
 import React from "react";
 
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
+
+import Avatar from "@material-ui/core/Avatar";
 
 import Typography from "@material-ui/core/Typography";
 
@@ -13,6 +14,14 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "1rem",
     marginBottom: "1rem",
   },
+  avatar: {
+    margin: 10,
+  },
+  bigAvatar: {
+    margin: 10,
+    width: 60,
+    height: 60,
+  },
   details: {
     display: "flex",
     flexDirection: "column",
@@ -21,7 +30,9 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 0 auto",
   },
   cover: {
-    width: "90%",
+    width: "100%",
+    height: "100%",
+    objectFit: "contain",
   },
 }));
 
@@ -30,7 +41,7 @@ const MovieCard = ({ title, summary, image }) => {
 
   return (
     <Card className={classes.root}>
-      <CardMedia className={classes.cover} image={image} title="move image" />
+      <Avatar alt="movie picture" src={image} className={classes.bigAvatar} />
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h5">
