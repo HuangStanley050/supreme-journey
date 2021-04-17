@@ -13,7 +13,11 @@ import { useMovie } from "../context/MovieStore";
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    minWidth: 340,
+  },
+  tableCell: {
+    paddingRight: 4,
+    paddingLeft: 5,
   },
 });
 
@@ -33,19 +37,34 @@ const SessionDetail = () => {
       <Table className={classes.table} aria-label="session table">
         <TableHead>
           <TableRow>
-            <TableCell align="left">{title}</TableCell>
-            <TableCell align="right">Session ID</TableCell>
-            <TableCell align="right">Session Time</TableCell>
-            <TableCell align="right">Session Date</TableCell>
+            <TableCell className={classes.tableCell} align="left">
+              {title}
+            </TableCell>
+            <TableCell className={classes.tableCell} align="right">
+              Session ID
+            </TableCell>
+            <TableCell className={classes.tableCell} align="right">
+              Session Time
+            </TableCell>
+            <TableCell className={classes.tableCell} align="right">
+              Session Date
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {sessions.map((session) => (
             <TableRow hover={true} key={session.id}>
-              <TableCell align="right"></TableCell>
-              <TableCell align="right">{session.sessionId}</TableCell>
-              <TableCell align="right">{session.sessionTime}</TableCell>
-              <TableCell align="right">
+              <TableCell
+                className={classes.tableCell}
+                align="right"
+              ></TableCell>
+              <TableCell className={classes.tableCell} align="right">
+                {session.sessionId}
+              </TableCell>
+              <TableCell className={classes.tableCell} align="right">
+                {session.sessionTime}
+              </TableCell>
+              <TableCell className={classes.tableCell} align="right">
                 {session.showDateTime.split("T")[0]}
               </TableCell>
             </TableRow>
