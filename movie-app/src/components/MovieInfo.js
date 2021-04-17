@@ -1,5 +1,6 @@
 import React from "react";
 import { useMovie } from "../context/MovieStore";
+import MovieCard from "./MovieCard";
 
 const MovieInfo = ({ pagesVisited, moviesPerPage }) => {
   const [state] = useMovie();
@@ -8,19 +9,20 @@ const MovieInfo = ({ pagesVisited, moviesPerPage }) => {
   const showMovies = movies
     .slice(pagesVisited, pagesVisited + moviesPerPage)
     .map((movie) => {
+      const { media, movieId } = movie;
+      const image = media[0].url;
       return (
         <div>
-          <h3>{movie.title}</h3>
-          <h3>{movie.synopsis}</h3>
+          <MovieCard
+            key={movieId}
+            title={movie.title}
+            summary={movie.synopsis}
+            image={image}
+          />
         </div>
       );
     });
-  return (
-    <div>
-      <h1>This is dummy movieInfo</h1>
-      {showMovies}
-    </div>
-  );
+  return <div>{showMovies}</div>;
 };
 
 export default MovieInfo;
