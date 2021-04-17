@@ -12,17 +12,9 @@ import { useMovie } from "./context/MovieStore";
 import AppBar from "./components/AppBar";
 import MovieInfo from "./components/MovieInfo";
 import Paginate from "./components/Paginate";
+import SessionDetail from "./components/SessionDetail";
 import axios from "axios";
 
-const Child = () => {
-  let { movieId } = useParams();
-
-  return (
-    <div>
-      <h3>ID: {movieId}</h3>
-    </div>
-  );
-};
 export default function App() {
   const [state, dispatch] = useMovie();
   const [pageNumber, setPageNumber] = useState(0);
@@ -63,7 +55,7 @@ export default function App() {
           <Route path="/test">
             <h1>Test</h1>
           </Route>
-          <Route path="/:movieId" children={<Child />} />
+          <Route path="/:movieId" children={<SessionDetail />} />
         </Switch>
       </Container>
     </React.Fragment>
