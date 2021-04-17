@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
+import { Switch, Route, useParams } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import {
   LOAD_MOVIES_FAIL,
@@ -14,6 +14,15 @@ import MovieInfo from "./components/MovieInfo";
 import Paginate from "./components/Paginate";
 import axios from "axios";
 
+const Child = () => {
+  let { movieId } = useParams();
+
+  return (
+    <div>
+      <h3>ID: {movieId}</h3>
+    </div>
+  );
+};
 export default function App() {
   const [state, dispatch] = useMovie();
   const [pageNumber, setPageNumber] = useState(0);
@@ -40,8 +49,22 @@ export default function App() {
       <CssBaseline />
       <Container maxWidth="lg">
         <AppBar />
-        <MovieInfo pagesVisited={pagesVisited} moviesPerPage={moviesPerPage} />
-        <Paginate moviesPerPage={moviesPerPage} setPageNumber={setPageNumber} />
+        <Switch>
+          <Route exact path="/">
+            <MovieInfo
+              pagesVisited={pagesVisited}
+              moviesPerPage={moviesPerPage}
+            />
+            <Paginate
+              moviesPerPage={moviesPerPage}
+              setPageNumber={setPageNumber}
+            />
+          </Route>
+          <Route path="/test">
+            <h1>Test</h1>
+          </Route>
+          <Route path="/:movieId" children={<Child />} />
+        </Switch>
       </Container>
     </React.Fragment>
   );

@@ -1,12 +1,10 @@
 import React from "react";
-
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-
 import Avatar from "@material-ui/core/Avatar";
-
 import Typography from "@material-ui/core/Typography";
+import InfoButton from "./SessionButton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,9 +13,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "1rem",
     backgroundColor: "dodgerBlue",
   },
-  avatar: {
-    margin: 10,
-  },
+
   bigAvatar: {
     margin: 10,
     width: 60,
@@ -40,10 +36,11 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: "yellow",
+    marginBottom: "1rem",
   },
 }));
 
-const MovieCard = ({ title, summary, image }) => {
+const MovieCard = ({ title, summary, image, movieId }) => {
   const classes = useStyles();
 
   return (
@@ -51,7 +48,7 @@ const MovieCard = ({ title, summary, image }) => {
       <Avatar alt="movie picture" src={image} className={classes.bigAvatar} />
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          <Typography component="h5" className={classes.title}>
+          <Typography variant="h5" className={classes.title}>
             {title}
           </Typography>
           <Typography variant="subtitle1" className={classes.summary}>
@@ -59,6 +56,7 @@ const MovieCard = ({ title, summary, image }) => {
           </Typography>
         </CardContent>
       </div>
+      <InfoButton movieId={movieId} />
     </Card>
   );
 };
