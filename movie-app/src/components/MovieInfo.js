@@ -22,7 +22,8 @@ const MovieInfo = ({ pagesVisited, moviesPerPage }) => {
         />
       );
     });
-  return <div>{showMovies}</div>;
+
+  return <div data-testid="movieCards">{showMovies}</div>;
 };
 
 export default MovieInfo;
