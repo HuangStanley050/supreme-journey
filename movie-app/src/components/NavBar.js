@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+const NavBar = () => {
   const classes = useStyles();
 
   return (
@@ -30,7 +30,7 @@ export default function ButtonAppBar() {
             edge="start"
             className={classes.menuButton}
             color="inherit"
-            aria-label="menu"
+            aria-label="home"
             to="/"
             component={RouterLink}
           >
@@ -43,4 +43,5 @@ export default function ButtonAppBar() {
       </AppBar>
     </div>
   );
-}
+};
+export default NavBar;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { Switch, Route, useParams } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Container from "@material-ui/core/Container";
 import {
   LOAD_MOVIES_FAIL,
@@ -9,7 +9,7 @@ import {
   LOAD_MOVIES_START,
 } from "./context/Types";
 import { useMovie } from "./context/MovieStore";
-import AppBar from "./components/AppBar";
+import NavBar from "./components/NavBar";
 import MovieInfo from "./components/MovieInfo";
 import Paginate from "./components/Paginate";
 import SessionDetail from "./components/SessionDetail";
@@ -40,7 +40,7 @@ export default function App() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <AppBar />
+        <NavBar />
         <Switch>
           <Route exact path="/">
             <MovieInfo
