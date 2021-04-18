@@ -22,7 +22,8 @@ const useStyles = makeStyles({
 });
 
 const SessionDetail = () => {
-  let { movieId } = useParams();
+  const { movieId } = useParams();
+
   const classes = useStyles();
   const [state] = useMovie();
   const { movies } = state;
