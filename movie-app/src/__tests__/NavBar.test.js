@@ -6,12 +6,12 @@ import {
   act,
 } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import AppBar from "../components/NavBar";
+import NavBar from "../components/NavBar";
 
 test("Navbar should render with icon and a caption", () => {
   render(
     <BrowserRouter>
-      <AppBar />
+      <NavBar />
     </BrowserRouter>
   );
   expect(screen.getByText(/movies/i)).toBeInTheDocument();

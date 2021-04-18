@@ -56,11 +56,11 @@ const MovieCard = ({ title, summary, image, movieId, rating }) => {
           <Typography variant="h5" className={classes.title}>
             {title}
           </Typography>
-          {!matches ? null : (
+          {matches ? (
             <Typography component="p" className={classes.summary}>
               {summary}
             </Typography>
-          )}
+          ) : null}
         </CardContent>
       </div>
       <InfoButton movieId={movieId} />
