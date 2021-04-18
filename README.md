@@ -16,6 +16,8 @@
 
 1. From the root of the project run **npm run server**
 
+2. Open another terminal
+
 2. Navigate to the **movie-app** folder within the root folder
 
 3. run **npm start**
