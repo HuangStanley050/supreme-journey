@@ -10,17 +10,19 @@ const Paginate = ({ moviesPerPage, setPageNumber }) => {
     setPageNumber(selected);
   };
   return (
-    <ReactPaginate
-      previousLabel={"Previous"}
-      nextLabel={"Next"}
-      pageCount={pageCount}
-      onPageChange={changePage}
-      containerClassName={"pagination"}
-      previousLinkClassName={"pagination__link"}
-      nextLinkClassName={"pagination__link"}
-      disabledClassName={"pagination__link--disabled"}
-      activeClassName={"pagination__link--active"}
-    />
+    <div data-testid="pageinateComponent">
+      <ReactPaginate
+        previousLabel={"Previous"}
+        nextLabel={"Next"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"pagination"}
+        previousLinkClassName={"pagination__link"}
+        nextLinkClassName={"pagination__link"}
+        disabledClassName={"pagination__link--disabled"}
+        activeClassName={"pagination__link--active"}
+      />
+    </div>
   );
 };
 
