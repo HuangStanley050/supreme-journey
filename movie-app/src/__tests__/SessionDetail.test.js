@@ -1,11 +1,5 @@
-import {
-  render,
-  fireEvent,
-  waitFor,
-  screen,
-  act,
-} from "@testing-library/react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import SessionDetail from "../components/SessionDetail";
 
 // jest.mock("react-router-dom", () => ({
