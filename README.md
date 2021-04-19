@@ -4,7 +4,7 @@
 
 1. git clone the repo or unzip from a zip file
 
-2. Navigate to the root of the project **village-movie-session**
+2. Navigate to the root of the project **supreme-journey**
 
 3. run **npm install**
 
