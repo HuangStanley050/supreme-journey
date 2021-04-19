@@ -8,7 +8,7 @@
 
 3. run **npm install**
 
-4. navigate to the folder **movie-app** within the **village-movie-session** folder
+4. navigate to the folder **movie-app** within the **supreme-journey** folder
 
 5. run **npm install**
 
